@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.8" jmeter="2.13 r1665067">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="测试计划" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="add接口发线上数据" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1000</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <longProp name="ThreadGroup.start_time">1468464428000</longProp>
+        <longProp name="ThreadGroup.end_time">1468464428000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">300</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Cookie</stringProp>
+              <stringProp name="Header.value">cna=oFvVEIX+DhICAXJQ6702ODAV; juid=01b3p5oeme1n7d; __ali=1481534882799BFE; __aliCount=1; __ysuid=14815949518012fL; advideo88186_1=2; advideo88186_2=1; __aryft=1481687694; logCookieKey=invalid; yseid=1482286341364fQB2KJ; yseidcount=11; seid=01b4g0pjtd1bq8; referhost=http%3A%2F%2Fwww.youku.com; __utmarea=; ykss=28205a58f049d56613e4bed0; P_j_scl=hasCheckLogin; _l_lgi=851287653; u=%E7%A7%A6%E6%97%B6%E6%98%8E%E6%9C%88%E6%B1%89%E6%97%B6%E5%85%B3%E7%A7%A6%E6%97%B6%E6%98%8E%E6%9C%88%E6%B1%89%E6%97%B6%E5%85%B3%E5%93%88; yktk=1%7C1482301493%7C15%7CaWQ6ODUxMjg3NjUzLG5uOuenpuaXtuaYjuaciOaxieaXtuWFs%2BenpuaXtuaYjuaciOaxieaXtuWFs%2BWTiCx2aXA6ZmFsc2UseXRpZDo4NTEyODc2NTMsdGlkOjA%3D%7Cd619c970ccd9ecaafefda4d92138d8fa%7C4a9e12171bbbe8bc0a20ceb356981cb2630f2f09%7C1; rpvid=14823016601062VLRGS-1482302038100; ypvid=14823020394489Xzb63; ysestep=21; yseidtimeout=1482309239450; ycid=0; ystep=175; seidtimeout=1482303839453; __ayft=1481594951776; __aysid=1482118057098hYp; __arpvid=1482302039728diripX-1482302039745; __arycid=dzpai-1-00-0-382198318; __ayscnt=2; __arcms=dzpai-1-00-0-382198318; __aypstp=208; __ayspstp=127; szutsid=851287653; __ayvstp=629; __aysvstp=305</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="接口" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="uid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${uid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">uid</stringProp>
+              </elementProp>
+              <elementProp name="type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${type}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">type</stringProp>
+              </elementProp>
+              <elementProp name="iid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${iid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">iid</stringProp>
+              </elementProp>
+              <elementProp name="ver" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${ver}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">ver</stringProp>
+              </elementProp>
+              <elementProp name="playat" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${playat}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">playat</stringProp>
+              </elementProp>
+              <elementProp name="ouid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${ouid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">ouid</stringProp>
+              </elementProp>
+              <elementProp name="time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${createtime}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">time</stringProp>
+              </elementProp>
+              <elementProp name="lid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${lid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">lid</stringProp>
+              </elementProp>
+              <elementProp name="ct" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${ct}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">ct</stringProp>
+              </elementProp>
+              <elementProp name="content" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${content}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">content</stringProp>
+              </elementProp>
+              <elementProp name="aid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${aid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">aid</stringProp>
+              </elementProp>
+              <elementProp name="sign" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${sign}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">sign</stringProp>
+              </elementProp>
+              <elementProp name="propertis" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${propertis}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">propertis</stringProp>
+              </elementProp>
+              <elementProp name="n" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${n}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">n</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">10.25.12.58</stringProp>
+          <stringProp name="HTTPSampler.port">80</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/add</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+          <collectionProp name="Asserion.test_strings">
+            <stringProp name="-1867169789">success</stringProp>
+          </collectionProp>
+          <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+          <boolProp name="Assertion.assume_success">false</boolProp>
+          <intProp name="Assertion.test_type">2</intProp>
+        </ResponseAssertion>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="delimiter">\t</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">onlinetest.txt</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">n,aid,content,createtime,ct,id,iid,ipaddr,level,lid,mat,ouid,playat,propertis,status,type,uid,ver,sign</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="add接口乱发" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">10</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1468464428000</longProp>
+        <longProp name="ThreadGroup.end_time">1468464428000</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">300</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Cookie</stringProp>
+              <stringProp name="Header.value">refresh_btn_left=1485px; refresh_btn_top=283px; last_aid=a74; last_url=manager-dmuser-list.do; yktk=1%7C1477644647%7C15%7CaWQ6MzY4ODg5NDM5LG5uOmliYWlnZSx2aXA6ZmFsc2UseXRpZDozNjg4ODk0MzksdGlkOjA%3D%7C3222614beade45c38a307895bf71081d%7C54028e74ecc3caca839069463263ec464c20d6d7%7C1%7C1%7C1%7C1%7C1%7C1%7C1%7C1; juid=01b0f24i9fue5; __ysuid=1477974313182xLb; cna=rFplDzGYcnQCAXJQ64/NifAL; __aryft=1478056926; l=AgcHZ15GzPG-UbgtBNnL9DzAF7HRAdvu; isg=AnR0o3BfkJUb2QTHj4oUUF-rRTJg1Jg3rU7hhg7VDf-CeRTDNl1oxyp7jwZb; __tft=1479885638974; __ali=14804959372254qg; __aliCount=1; logCookieKey=invalid; yseid=14809930080841cR5AS; yseidcount=40; seid=01b390vqeq1m3c; referhost=http%3A%2F%2Fwww.youku.com; ykss=00294658867089115e66a3d6; P_j_scl=hasCheckLogin; _l_lgi=851287653; u=%E7%A7%A6%E6%97%B6%E6%98%8E%E6%9C%88%E6%B1%89%E6%97%B6%E5%85%B3%E7%A7%A6%E6%97%B6%E6%98%8E%E6%9C%88%E6%B1%89%E6%97%B6%E5%85%B3%E5%93%88; yktk=1%7C1480993048%7C15%7CaWQ6ODUxMjg3NjUzLG5uOuenpuaXtuaYjuaciOaxieaXtuWFs%2BenpuaXtuaYjuaciOaxieaXtuWFs%2BWTiCx2aXA6ZmFsc2UseXRpZDo4NTEyODc2NTMsdGlkOjA%3D%7Caa6d75e0c53935ed6a25467c56934ef4%7Cd818aa9102b51b048453fc5b439af1fda35672a6%7C1; ypvid=1480993176187y23c20; ysestep=4; yseidtimeout=1481000376190; ycid=0; ystep=334; seidtimeout=1480994976203; __ayft=1478051556960; __aysid=1480922908296aoR; __arpvid=1480993176719oMHTjR-1480993176732; __arycid=dd-3-2038-308551-461390545; __ayscnt=7; __arcms=dd-3-2038-308551-461390545; __aypstp=292; __ayspstp=9; szutsid=851287653; __ayvstp=561; __aysvstp=2</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">true</boolProp>
+          <stringProp name="script">import java.net.URLEncoder;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.digest.DigestUtils;
+import java.util.Random;
+import java.text.*;
+import java.io.*;
+import java.util.*;
+
+log.info(&quot;start****************&quot;);
+String[] str_content = { &quot;弹幕护体&quot;, &quot;弹幕护体&quot;, &quot;弹幕护体&quot;, &quot;弹幕护体&quot;, &quot;弹幕护体&quot; };
+int[] iids = new int[] {382849475,156049518,415869132,387297716,375199299,156079513,46119038,156059651,372342402,30221395,397964732,394108448,402726933,411454446,417153948,132780791,404943324,423715924,364970928,156078318,408681963,391509107};
+//String[] str_iid = {&quot;156079513&quot;, &quot;387297716&quot;, &quot;382849475&quot;, &quot;156047900&quot;};
+//String[] str_ouid = {&quot;90043697&quot;, &quot;97454045&quot;, &quot;851287653&quot;, &quot;90043697&quot;};
+//String[] str_aid = {&quot;270792&quot;,&quot;298869&quot;,&quot;0&quot;,&quot;270792&quot;};
+String[] str_uid = {&quot;851287653&quot;, &quot;851287653&quot;};
+//851287653
+int random_iid = (int) (Math.random() * iids.length);
+//int random_iid = (int) ( Math.random () * 4 );
+int random_uid = (int) ( Math.random () * 2 );
+int random_content = (int) ( Math.random () * 5 );
+String id = (new Random().nextInt(3600000)).toString();
+
+String uid = str_uid[1];
+String type =&quot;1&quot;;
+String iid = (iids[new Random().nextInt(iids.length)]).toString();
+//String iid = &quot;382849475&quot;;
+String ver =&quot;1&quot;;
+String playat = id;
+//String ouid = str_ouid[2];
+//String ouid = &quot;851287653&quot;;
+String time =System.currentTimeMillis().toString();
+//String time = &quot;1477885947449&quot;;
+log.info(time);
+String ct =&quot;1001&quot;;
+String content =str_content[3]+id;
+//String aid = str_aid[2];
+String ouid = &quot;0&quot;;
+String ouid = &quot;0&quot;;
+String lid =&quot;0&quot;;
+String aid =&quot;0&quot;;
+String secretkey = &quot;Ef9/4e4d^@g9a2M3g&quot;;
+vars.put(&quot;uid&quot;,uid);
+vars.put(&quot;type&quot;,type);
+vars.put(&quot;iid&quot;,iid);
+vars.put(&quot;ver&quot;,ver);
+vars.put(&quot;playat&quot;,playat);
+vars.put(&quot;ouid&quot;,ouid);
+vars.put(&quot;time&quot;,time);
+vars.put(&quot;lid&quot;,lid);
+vars.put(&quot;ct&quot;,ct);
+vars.put(&quot;content&quot;,content);
+vars.put(&quot;aid&quot;,aid);
+
+String sign = DigestUtils.md5Hex((secretkey+time+uid+iid+content).getBytes(&quot;utf-8&quot;));
+System.out.println(secretkey+time+uid+iid+content);
+//sign = URLEncoder.encode(sign,&quot;UTF-8&quot;);
+vars.put(&quot;sign&quot;,sign);
+System.out.println(&quot;sign=&quot;+sign);</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="接口" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="uid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${uid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">uid</stringProp>
+              </elementProp>
+              <elementProp name="type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${type}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">type</stringProp>
+              </elementProp>
+              <elementProp name="iid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${iid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">iid</stringProp>
+              </elementProp>
+              <elementProp name="ver" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${ver}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">ver</stringProp>
+              </elementProp>
+              <elementProp name="playat" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${playat}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">playat</stringProp>
+              </elementProp>
+              <elementProp name="ouid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${ouid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">ouid</stringProp>
+              </elementProp>
+              <elementProp name="time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${time}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">time</stringProp>
+              </elementProp>
+              <elementProp name="lid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${lid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">lid</stringProp>
+              </elementProp>
+              <elementProp name="ct" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${ct}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">ct</stringProp>
+              </elementProp>
+              <elementProp name="content" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${content}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">content</stringProp>
+              </elementProp>
+              <elementProp name="aid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${aid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">aid</stringProp>
+              </elementProp>
+              <elementProp name="sign" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${sign}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">sign</stringProp>
+              </elementProp>
+              <elementProp name="propertis" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">propertis</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">10.25.12.58</stringProp>
+          <stringProp name="HTTPSampler.port">80</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/add</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">true</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+          <collectionProp name="Asserion.test_strings">
+            <stringProp name="-1867169789">success</stringProp>
+          </collectionProp>
+          <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+          <boolProp name="Assertion.assume_success">false</boolProp>
+          <intProp name="Assertion.test_type">2</intProp>
+        </ResponseAssertion>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="老系统弹幕" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">0</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1480998368000</longProp>
+        <longProp name="ThreadGroup.end_time">1480998368000</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">300</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Cookie</stringProp>
+              <stringProp name="Header.value">refresh_btn_left=1485px; refresh_btn_top=283px; last_aid=a74; last_url=manager-dmuser-list.do; yktk=1%7C1477644647%7C15%7CaWQ6MzY4ODg5NDM5LG5uOmliYWlnZSx2aXA6ZmFsc2UseXRpZDozNjg4ODk0MzksdGlkOjA%3D%7C3222614beade45c38a307895bf71081d%7C54028e74ecc3caca839069463263ec464c20d6d7%7C1%7C1%7C1%7C1%7C1%7C1%7C1%7C1; juid=01b0f24i9fue5; __ysuid=1477974313182xLb; cna=rFplDzGYcnQCAXJQ64/NifAL; __aryft=1478056926; l=AgcHZ15GzPG-UbgtBNnL9DzAF7HRAdvu; isg=AnR0o3BfkJUb2QTHj4oUUF-rRTJg1Jg3rU7hhg7VDf-CeRTDNl1oxyp7jwZb; __tft=1479885638974; __ali=14804959372254qg; __aliCount=1; logCookieKey=invalid; yseid=14809930080841cR5AS; yseidcount=40; seid=01b390vqeq1m3c; referhost=http%3A%2F%2Fwww.youku.com; ykss=00294658867089115e66a3d6; P_j_scl=hasCheckLogin; _l_lgi=851287653; u=%E7%A7%A6%E6%97%B6%E6%98%8E%E6%9C%88%E6%B1%89%E6%97%B6%E5%85%B3%E7%A7%A6%E6%97%B6%E6%98%8E%E6%9C%88%E6%B1%89%E6%97%B6%E5%85%B3%E5%93%88; yktk=1%7C1480993048%7C15%7CaWQ6ODUxMjg3NjUzLG5uOuenpuaXtuaYjuaciOaxieaXtuWFs%2BenpuaXtuaYjuaciOaxieaXtuWFs%2BWTiCx2aXA6ZmFsc2UseXRpZDo4NTEyODc2NTMsdGlkOjA%3D%7Caa6d75e0c53935ed6a25467c56934ef4%7Cd818aa9102b51b048453fc5b439af1fda35672a6%7C1; ypvid=1480993176187y23c20; ysestep=4; yseidtimeout=1481000376190; ycid=0; ystep=334; seidtimeout=1480994976203; __ayft=1478051556960; __aysid=1480922908296aoR; __arpvid=1480993176719oMHTjR-1480993176732; __arycid=dd-3-2038-308551-461390545; __ayscnt=7; __arcms=dd-3-2038-308551-461390545; __aypstp=292; __ayspstp=9; szutsid=851287653; __ayvstp=561; __aysvstp=2</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="接口" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">30</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">id</stringProp>
+              </elementProp>
+              <elementProp name="ct" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1001</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">ct</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">10.25.12.58</stringProp>
+          <stringProp name="HTTPSampler.port">80</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/sysdm</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+          <collectionProp name="Asserion.test_strings">
+            <stringProp name="51539">410</stringProp>
+          </collectionProp>
+          <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+          <boolProp name="Assertion.assume_success">false</boolProp>
+          <intProp name="Assertion.test_type">2</intProp>
+        </ResponseAssertion>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
